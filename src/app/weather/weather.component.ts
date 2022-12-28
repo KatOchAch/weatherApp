@@ -18,11 +18,10 @@ export class WeatherComponent {
  }
  ngOnInit(){}
  
- getDetailsComponent() {
-  this.weatherService. getDetailsSubscribe()
-  
- }
-}
+ //getDetailsComponent() {
+  //this.weatherService. getDetailsSubscribe()
+ //}
+}//
  
 
 
