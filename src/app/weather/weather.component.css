@@ -1,0 +1,77 @@
+   
+#container {
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: url(src\assets\pexels.jpg);
+    background-size: cover;
+    font-family: 'Cinzel', serif;
+} 
+
+#logo {
+    padding-top: 100px;
+    padding-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    color :rgb(44, 42, 42);
+    text-align: center;
+    height: 30px;
+    font-size: 52px;
+    letter-spacing: 3px;
+    font-family: 'Cinzel', serif;
+    
+}
+#dekorZmiennePogodowe{
+    padding-top: 50px;
+    border: 2px solid white;
+    border-radius: 20px;
+    height: 300px;
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-family: 'Cinzel', serif;
+    font-size: 20px;
+    box-shadow: 1px 10px 27px 7px #6c98ab;
+    transition: transform 0.2s ease-in-out;
+}
+#dekorZmiennePogodowe:hover {
+    transform: scale(1.2);
+}
+
+#R-zmiennePogodowe{
+    float: left;
+    margin-left: 100px;
+    padding-top: 60px;
+    text-align:justify;
+    font-size: 25px;
+    font-weight: 400;
+    
+    
+}
+#image{
+    float: left;
+    margin-left: 50px;   
+    text-align: center;
+    padding-top: 20px;
+    
+
+    
+}
+
+#TemperaturaOdczuwalna{
+    text-align: center;
+    padding-top: 100px;
+    font-family: 'Cinzel', serif;
+    font-size: 30px;
+    
+}
+#wschodZachod{
+    padding-top: 50px;
+    text-align: center;
+    font-family: 'Cinzel', serif;
+    padding-bottom: 400px;
+    font-size: 20px;
+}
+
+
