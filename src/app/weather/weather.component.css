@@ -1,77 +1,187 @@
-   
 #container {
-    height: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    background-image: url(src\assets\pexels.jpg);
-    background-size: cover;
-    font-family: 'Cinzel', serif;
-} 
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: white;
+  background-size: cover;
+  font-family: "Cinzel", serif;
+  font-size: 40px;
+  line-height: 30px;
+}
 
 #logo {
-    padding-top: 100px;
-    padding-bottom: 50px;
-    margin-left: auto;
-    margin-right: auto;
-    color :rgb(44, 42, 42);
-    text-align: center;
-    height: 30px;
-    font-size: 52px;
-    letter-spacing: 3px;
-    font-family: 'Cinzel', serif;
-    
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  color: rgb(44, 42, 42);
+  text-align: center;
+  height: 30px;
+  font-size: 52px;
+  letter-spacing: 3px;
+  font-family: "Cinzel", serif;
 }
-#dekorZmiennePogodowe{
-    padding-top: 50px;
-    border: 2px solid white;
-    border-radius: 20px;
-    height: 300px;
-    width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    font-family: 'Cinzel', serif;
-    font-size: 20px;
-    box-shadow: 1px 10px 27px 7px #6c98ab;
-    transition: transform 0.2s ease-in-out;
+#dekorZmiennePogodowe {
+  padding-bottom: 50px;
+  padding-top:100px ;
+  border: 2px solid white;
+  border-radius: 20px;
+  height: 300px;
+  width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: inline-block;
+  font-family: "Cinzel", serif;
+  box-shadow: 1px 10px 27px 7px #6c98ab;
+  transition: transform 0.2s ease-in-out;
 }
 #dekorZmiennePogodowe:hover {
-    transform: scale(1.2);
+  transform: scale(1.2);
 }
 
-#R-zmiennePogodowe{
+#R-zmiennePogodowe {
+  float: left;
+  margin-left: 100px;
+  text-align: justify;
+  font-size: 25px;
+  font-weight: 400;
+}
+#image {
+  float: left;
+  margin-left: 50px;
+  text-align: center;
+
+}
+
+#TemperaturaOdczuwalna {
+  text-align: center;
+  padding-top: 200px;
+  font-family: "Cinzel", serif;
+  font-size: 30px;
+  width: 900px;
+  height: auto;
+  
+}
+#wschodZachod {
+  padding-top: 50px;
+  text-align: center;
+  font-family: "Cinzel", serif;
+  padding-bottom: 50px;
+  font-size: 25px;
+  margin: auto;
+  
+}
+#kolejneDni{
+  margin-left: auto;
+  margin-right: auto;
+  text-align: justify;
+  height: 300px;
+  width: 1500px;
+  font-size: 18px;
+  font-family: "Cinzel", serif;
+  border-radius: 30px;
+  padding-bottom: 20px;
+  line-height: 20px;
+}
+
+#dzien1{
+  float: left;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  border: 20px solid white;
+  border-radius: 20px;
+  height: 200px;
+  width: 300px;
+  box-shadow: 1px 7px 6px 7px #6c98ab;
+  transition: transform 0.2s ease-in-out;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+#dzien1:hover{
+  transform: scale(1.2);
+}
+#dzien2{
+  float: left;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  border: 20px solid white;
+  border-radius: 20px;
+  height: 200px;
+  width: 300px;
+  box-shadow: 1px 7px 6px 7px #6c98ab;
+  transition: transform 0.2s ease-in-out;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+#dzien2:hover{
+  transform: scale(1.2);
+}
+#dzien3{
+  float: left;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  border: 20px solid white;
+  border-radius: 20px;
+  height: 200px;
+  width: 300px;
+  box-shadow: 1px 7px 6px 7px #6c98ab;
+  transition: transform 0.2s ease-in-out;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+#dzien3:hover{
+  transform: scale(1.2);
+}
+#dzien4{
+  float: left;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  border: 20px solid white;
+  border-radius: 20px;
+  height: 200px;
+  width: 300px;
+  box-shadow: 1px 7px 6px 7px #6c98ab;
+  transition: transform 0.2s ease-in-out;
+  margin-left: 15px;
+  margin-right: 15px;
+  
+  
+}
+#dzien4:hover{
+  transform: scale(1.2);
+}
+#wschod{
+  
+  width: 900px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* #wschodImg{
+  float: left;
+  margin-left: 200px;
+  margin-right: 20px;
+   
+} */
+
+  #zachod{
+    width: 900px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+
+  }
+  /* #zachodImg{
     float: left;
-    margin-left: 100px;
-    padding-top: 60px;
-    text-align:justify;
-    font-size: 25px;
-    font-weight: 400;
-    
-    
-}
-#image{
-    float: left;
-    margin-left: 50px;   
-    text-align: center;
-    padding-top: 20px;
-    
+    margin-left: 200px;
+    margin-right: 20px;
+     
+  } */
 
-    
+#imgKolejneDni{
+  float:right;
+  margin-right: 50px;
+  height: 50px;
+  width: 50px;
 }
-
-#TemperaturaOdczuwalna{
-    text-align: center;
-    padding-top: 100px;
-    font-family: 'Cinzel', serif;
-    font-size: 30px;
-    
-}
-#wschodZachod{
-    padding-top: 50px;
-    text-align: center;
-    font-family: 'Cinzel', serif;
-    padding-bottom: 400px;
-    font-size: 20px;
-}
-
 

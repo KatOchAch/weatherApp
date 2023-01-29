@@ -1,30 +1,26 @@
-import { Component, OnInit, } from '@angular/core';
-import { WeatherAPIService } from '../services/weather-api.service';
-import { WeatherService } from '../services/weather.service';
-
-
+import { Component, OnInit } from '@angular/core'
+import { Observable } from 'rxjs'
+import { WeatherFormattedData } from '../models/weather-formatted'
+import { WeatherService } from '../services/weather.service'
 
 @Component({
-  selector: 'app-weather',
-  templateUrl: './weather.component.html',
-  styleUrls: ['./weather.component.css'],
-  providers: [
-    WeatherAPIService,
-    WeatherService 
-  ]
+    selector: 'app-weather',
+    templateUrl: './weather.component.html',
+    styleUrls: ['./weather.component.css'],
 })
-export class WeatherComponent {
- constructor (private weatherService: WeatherService){
- }
- ngOnInit(){}
- 
- //getDetailsComponent() {
-  //this.weatherService. getDetailsSubscribe()
- //}
-}//
- 
+export class WeatherComponent implements OnInit {
+    // componentData?: WeatherFormattedData
+    componentData$?: Observable<WeatherFormattedData>
 
+    constructor(private weatherService: WeatherService) {}
 
+    ngOnInit(): void {
+        this.componentData$ = this.weatherService.getDetailsSubscribe()
+    }
+    }
 
-// dane z serwisu przypisac do obiektu w component.ts a pozniej komponent zainicjowac w html zeby sie wyswietlil
-                
+// this.weatherService
+//    .getDetailsSubscribe()
+//     .subscribe({ next: (response) => (this.componentData = response) })
+
+//  how to use debugger in chrome angular

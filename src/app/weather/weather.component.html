@@ -1,36 +1,105 @@
-<div id ="container">
-    <div id = "logo">
-        Prognoza Pogody  
-    </div> 
-
-    <app-clock></app-clock>
+<div id="container" *ngIf="componentData$ | async as weatherData">
     
-    <div id = "dekorZmiennePogodowe">
-            <div id="image">
-                <img src = assets\weather.png width="220" height="200"/>
+;
+    <div id="logo">Prognoza Pogody  <br /> <br /> <span style = "text-decoration:underline;" >Wrocław </span> </div>
+
+    <app-clock>
+        
+    </app-clock>
+
+    <div id="dekorZmiennePogodowe">
+        <div id="image">
+            <img src="assets\Status-weather-many-clouds-icon.png" width="200" height="180" *ngIf="weatherData.cloudly == 100" >
+            <img src="assets\Status-weather-showers-day-icon.png" width="200" height="180" *ngIf="weatherData.cloudly > 10 && weatherData.rain > 0.2 " >
+            <img src="assets\Status-weather-clouds-icon.png" width="200" height="180" *ngIf="weatherData.cloudly > 10 && weatherData.cloudly < 100" >
+            <img src="assets\Status-reinWithoutSun-icon (1).png"width="200" height="180" *ngIf="weatherData.cloudly > 70 && weatherData.rain > 0.2" >
+            <img src="assets\Status-weather-clear-icon.png" width="200" height="180" *ngIf="weatherData.cloudly < 10" >
+        </div>
+        <div id="R-zmiennePogodowe">
+            Temperatura: <span style = "font-weight: 800;"> {{ weatherData.temperature }} °C ></span> <br/>
+            Opady: <span style = "font-weight: 800;"> {{ weatherData.rain }} mm </span> <br />
+            Prędkość Wiatru:<span style = "font-weight: 800;"> {{ weatherData.predkoscWiatru }} km/h </span> <br />
+            Ciśnienie: <span style = "font-weight: 800;"> {{ weatherData.cisnienie }} hPa </span> <br />
+            Zachmurzenie: <span style = "font-weight: 800;"> {{ weatherData.cloudly}} % </span> <br />
+        </div>
+        <div id="TemperaturaOdczuwalna">
+            Temperatura odczuwalna: <span style = "font-weight: 800;">{{ weatherData.tempOczuwalna }} °C </span>
+        </div>
+    </div>
+    <div style="clear: both"></div>
+
+
+
+    <div id="wschodZachod">
+        <div id ="wschod">
+            <!-- <div id ="wschodImg"><img src="assets\sunrise(2).png" width="150" height="100" />
+            </div> -->
+            <div id ="wschodTekst"> <span style ="padding-bottom: 300px;"> Wschód Słońca:</span> <span style = "font-weight: 800; "> {{
+            weatherData.wschod
+            }} </span> <br />
             </div>
-             <div id = "R-zmiennePogodowe">
-            Temperatura Max.: <br/>
-            Opady:<br/>
-            Prędkość Wiatru:<br/>
-            Kierunek Wiatru:<br/>
-            Promieniowanie UV:<br/>
+        </div>
+        <div id ="zachod">
+            <!-- <div id ="zachodImg">
+            <img src="assets\sunset.png" width="150" height="100" /> 
+            </div> -->
+            <div id ="zachodTekst">
+            Zachód Słońca: <span style = "font-weight: 800;">{{
+            weatherData.zachod
+        }} </span><br />
             </div>
+        </div>
     </div>
-        <div style="clear:both;"></div>
-
-    <div id="TemperaturaOdczuwalna">
-        Temperatura odczuwalna:
+    <div id="kolejneDni">
+        <div id="dzien1">
+                <div id ="imgKolejneDni">
+                    <img src="assets\Status-weather-clouds-icon.png" width="100" height="90" *ngIf="weatherData.rain1 <= 0" >
+                    <img src="assets\Status-weather-showers-day-icon.png" width="100" height="90" *ngIf="weatherData.rain1 >= 0.1" >
+                </div>
+            <span style = "font-weight: 800; font-size: 18px;"> jutro: <br /> {{weatherData.dzien1}} </span> <br /><br />
+            Temperatura: <span style = "font-weight: 800;">{{ weatherData.temperature1 }} °C </span> <br />
+            Opady:<span style = "font-weight: 800;">{{ weatherData.rain1 }} mm </span> <br />
+            Prędkość Wiatru: <span style = "font-weight: 800;">{{ weatherData.predkoscWiatru1 }} km/h</span>  <br /><br />
+            Wschód Słońca:<span style = "font-weight: 800;">{{weatherData.wschod1}}</span> <br />
+            Zachód Słońca:<span style = "font-weight: 800;">{{weatherData.zachod1}}</span> <br />
+        </div>
+        <div id="dzien2">
+            <div id ="imgKolejneDni">
+                <img src="assets\Status-weather-clouds-icon.png" width="100" height="90" *ngIf="weatherData.rain2 <= 0.1" >
+                <img src="assets\Status-weather-showers-day-icon.png" width="100" height="90" *ngIf="weatherData.rain2 >= 0.2" >
+            </div>
+            <span style = "font-weight: 800; font-size: 18px;"> kolejny Dzień: <br /> {{weatherData.dzien2}} </span> <br /><br />
+            Temperatura:<span style = "font-weight: 800;"> {{ weatherData.temperature2 }} °C</span>  <br />
+            Opady:<span style = "font-weight: 800;">{{ weatherData.rain2 }} mm </span> <br />
+            Prędkość Wiatru:<span style = "font-weight: 800;"> {{ weatherData.predkoscWiatru2 }} km/h</span>  <br /> <br />
+            Wschód Słońca:<span style = "font-weight: 800;">{{weatherData.wschod2}}</span> <br />
+            Zachód Słońca:<span style = "font-weight: 800;">{{weatherData.zachod2}}</span> <br />
+        </div>
+        <div id="dzien3">
+            <div id ="imgKolejneDni">
+                <img src="assets\Status-weather-clouds-icon.png" width="100" height="90" *ngIf="weatherData.rain3 < 0.1">
+                <img src="assets\Status-weather-showers-day-icon.png" width="100" height="90" *ngIf=" weatherData.rain3 > 0.2" >
+            </div>
+            <span style = "font-weight: 800; font-size: 18px;"> kolejny Dzień: <br /> {{weatherData.dzien3}} </span> <br /><br />
+            Temperatura:<span style = "font-weight: 800;"> {{ weatherData.temperature3 }} °C </span> <br />
+            Opady: <span style = "font-weight: 800;">{{ weatherData.rain3 }} mm </span> <br />
+            Prędkość Wiatru:<span style = "font-weight: 800;"> {{ weatherData.predkoscWiatru3 }} km/h </span> <br /><br />
+            Wschód Słońca:<span style = "font-weight: 800;">{{weatherData.wschod3}}</span> <br />
+            Zachód Słońca:<span style = "font-weight: 800;">{{weatherData.zachod3}}</span> <br />
+        </div>
+        <div id="dzien4">
+            <div id ="imgKolejneDni">
+                <img src="assets\Status-weather-clouds-icon.png" width="100" height="90" *ngIf=" weatherData.rain4 < 0.1" >
+                <img src="assets\Status-weather-showers-day-icon.png" width="100" height="90" *ngIf="weatherData.rain4 > 0.1" >
+            </div>
+            <span style = "font-weight: 800; font-size: 18px;"> kolejny Dzień: <br /> {{weatherData.dzien4}} </span> <br /><br />
+            Temperatura:<span style = "font-weight: 800;"> {{ weatherData.temperature4}} °C</span>  <br />
+            Opady: <span style = "font-weight: 800;">{{ weatherData.rain4 }} mm </span> <br />
+            Prędkość Wiatru:<span style = "font-weight: 800;"> {{ weatherData.predkoscWiatru4 }} km/h</span>  <br /><br />
+            Wschód Słońca:<span style = "font-weight: 800;">{{weatherData.wschod4}}</span> <br />
+            Zachód Słońca:<span style = "font-weight: 800;">{{weatherData.zachod4}}</span> <br /><br />
+            
+        </div>
+        <div style="clear: both"></div>
     </div>
-
-    <div id = "wschodZachod">
-        <img src = assets\icons8-sunrise-64.png/> Wschód Słońca:<br/>                        
-        <img src = assets\icons8-sunset-64.png/> Zachód Słońca:
-    </div>
-    
-    
-
-</div>    
-
-
-
+</div>
